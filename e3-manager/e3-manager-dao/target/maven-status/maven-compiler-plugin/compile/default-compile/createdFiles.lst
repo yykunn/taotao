@@ -1,0 +1,11 @@
+com\yyk\mapper\TbItemDescMapper.class
+com\yyk\mapper\TbItemCatMapper.class
+com\yyk\mapper\TbContentCategoryMapper.class
+com\yyk\mapper\TbOrderShippingMapper.class
+com\yyk\mapper\TbUserMapper.class
+com\yyk\mapper\TbItemParamMapper.class
+com\yyk\mapper\TbItemMapper.class
+com\yyk\mapper\TbItemParamItemMapper.class
+com\yyk\mapper\TbContentMapper.class
+com\yyk\mapper\TbOrderMapper.class
+com\yyk\mapper\TbOrderItemMapper.class
