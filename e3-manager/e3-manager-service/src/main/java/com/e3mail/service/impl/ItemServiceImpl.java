@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.e3mail.service.ItemService;
+import com.e3mall.DTO.ItemDataGrid;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.yyk.mapper.TbItemMapper;
 import com.yyk.pojo.TbItem;
 import com.yyk.pojo.TbItemExample;
@@ -27,6 +30,18 @@ public class ItemServiceImpl implements ItemService {
 			return list.get(0);
 		}
 		return null;
+	}
+
+	@Override
+	public ItemDataGrid getItemList(Integer page, Integer rows) {
+		PageHelper.startPage(page, rows);
+		TbItemExample example = new TbItemExample();
+		List<TbItem> list = tbItemMapper.selectByExample(example);
+		PageInfo<TbItem> info = new PageInfo<TbItem>(list);
+		ItemDataGrid datagrid = new ItemDataGrid();
+		datagrid.setRows(list);
+		datagrid.setTotal(info.getTotal());
+		return datagrid;
 	}
 
 }
